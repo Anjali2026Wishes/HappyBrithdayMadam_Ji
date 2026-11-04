@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#230b19">
+    <meta name="description" content="A heartfelt birthday love letter for Sakshi.">
+    <title>A Birthday Love Letter for Sakshi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: dark;
+            --ink: #fff0e9;
+            --muted: #d5bdc6;
+            --rose: #f0a3ae;
+            --gold: #f3d09a;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            color: var(--ink);
+            background:
+                radial-gradient(ellipse at 7% 0%, rgba(128, 45, 80, 0.4), transparent 33%),
+                radial-gradient(ellipse at 95% 80%, rgba(101, 48, 96, 0.3), transparent 36%),
+                linear-gradient(135deg, #1a0712, #35101f 55%, #1d0a1a);
+            font-family: "DM Sans", sans-serif;
+        }
+
+        body::before {
+            position: fixed;
+            top: -270px;
+            right: -120px;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(243, 208, 154, 0.1);
+            border-radius: 50%;
+            box-shadow: 0 0 0 26px rgba(243, 208, 154, 0.025), 0 0 0 52px rgba(243, 208, 154, 0.018);
+            content: "";
+            pointer-events: none;
+        }
+
+        .page-shell { position: relative; z-index: 1; width: min(100% - 40px, 1100px); margin: 0 auto; }
+        .topbar { padding: 25px 0; }
+        .back-link { color: var(--muted); font-size: 0.9rem; text-decoration: none; }
+        .back-link:hover { color: var(--gold); }
+
+        .hero { padding: clamp(52px, 9vw, 100px) 20px 72px; text-align: center; }
+        .eyebrow { color: var(--gold); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; }
+
+        h1, h2, .memory-title {
+            font-family: "Playfair Display", Georgia, serif;
+            font-weight: 500;
+        }
+
+        h1 { max-width: 850px; margin: 22px auto 18px; font-size: clamp(3rem, 8vw, 6.2rem); line-height: 1.04; }
+        h1 em { color: var(--rose); font-weight: 500; }
+        .hero-copy { max-width: 550px; margin: 0 auto; color: var(--muted); font-size: 1.05rem; line-height: 1.85; }
+
+        .memories { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+
+        .memory-card {
+            overflow: hidden;
+            border: 1px solid rgba(243, 208, 154, 0.25);
+            border-radius: 22px;
+            background: linear-gradient(145deg, rgba(107, 47, 69, 0.62), rgba(43, 19, 38, 0.9));
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.3);
+            transition: transform 220ms ease, box-shadow 220ms ease;
+        }
+
+        .memory-card:hover { transform: translateY(-5px); box-shadow: 0 22px 48px rgba(0, 0, 0, 0.38); }
+        .memory-img { display: block; width: 100%; height: 280px; object-fit: cover; background: #482b39; }
+        .memory-copy { padding: 21px 22px 24px; }
+        .memory-title { margin: 0 0 9px; color: var(--gold); font-size: 1.34rem; }
+        .memory-caption { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.75; }
+
+        .love-letter {
+            margin: 80px auto 35px;
+            padding: clamp(36px, 7vw, 72px);
+            border: 1px solid rgba(243, 208, 154, 0.28);
+            border-radius: 28px;
+            background: linear-gradient(145deg, rgba(93, 39, 62, 0.72), rgba(40, 16, 34, 0.93));
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3), inset 0 1px rgba(255, 255, 255, 0.07);
+            text-align: center;
+        }
+
+        .love-letter h2 { margin: 0 0 22px; color: var(--ink); font-size: clamp(2.25rem, 6vw, 3.65rem); }
+        .love-letter > p { max-width: 760px; margin: 0 auto 17px; color: #e5cbd4; font-size: 1.02rem; line-height: 1.95; }
+        .signature { margin-top: 28px !important; color: var(--rose) !important; font-family: "Playfair Display", Georgia, serif; font-size: 1.55rem !important; font-style: italic; }
+
+        .promise-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 52px;
+            margin-top: 12px;
+            padding: 0 25px;
+            border: 1px solid rgba(255, 227, 197, 0.42);
+            border-radius: 999px;
+            color: #321221;
+            background: linear-gradient(110deg, #f3d09a, #f5b5b2);
+            box-shadow: 0 10px 24px rgba(189, 96, 123, 0.22);
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 180ms ease;
+        }
+
+        .promise-link:hover { transform: translateY(-2px); }
+
+        .promise {
+            max-width: 670px;
+            margin: 0 auto 80px;
+            padding: 35px 28px;
+            border: 1px solid rgba(243, 208, 154, 0.25);
+            border-radius: 20px;
+            color: #f5c2c4;
+            background: rgba(98, 42, 67, 0.45);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        footer { padding: 0 0 30px; color: var(--muted); font-size: 0.82rem; text-align: center; }
+        footer span { color: var(--rose); }
+
+        @media (max-width: 760px) {
+            .memories { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+            .memory-img { height: clamp(220px, 62vw, 340px); }
+            .love-letter { margin-top: 54px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar page-shell">
+        <a class="back-link" href="cause.html"><span aria-hidden="true">←</span> Back to your love notes</a>
+    </header>
+
+    <main>
+        <section class="hero page-shell">
+            <p class="eyebrow">A BIRTHDAY LOVE LETTER, JUST FOR YOU</p>
+            <h1>To my favorite girl,<br><em>beautiful Sakshi</em></h1>
+            <p class="hero-copy">Today deserves more than a simple birthday wish. It deserves a little reminder of how wonderfully, completely special you are to me.</p>
+        </section>
+
+        <section class="memories page-shell" aria-label="A few things I love about you">
+            <article class="memory-card">
+                <img src="./Static/img2.jpeg" alt="A close-up portrait of Sakshi" class="memory-img" loading="lazy">
+                <div class="memory-copy">
+                    <h2 class="memory-title">The face I adore</h2>
+                    <p class="memory-caption">Sakshi, your soft eyes and gentle smile are the kind of beautiful I could look at a thousand times and still admire.</p>
+                </div>
+            </article>
+            <article class="memory-card">
+                <img src="./Static/img4.jpeg" alt="Sakshi reaching back on a mountain journey" class="memory-img" loading="lazy">
+                <div class="memory-copy">
+                    <h2 class="memory-title">Mountain, with you</h2>
+                    <p class="memory-caption">That mountain view is unforgettable—but the thought of sharing every new path and little adventure with you is even more beautiful.</p>
+                </div>
+            </article>
+            <article class="memory-card">
+                <img src="./Static/img9.jpeg" alt="Sakshi smiling softly in her pink outfit" class="memory-img" loading="lazy">
+                <div class="memory-copy">
+                    <h2 class="memory-title">Your beautiful softness</h2>
+                    <p class="memory-caption">There is a quiet, peaceful sweetness in your smile that feels so much like you—gentle, lovely, and impossible not to cherish.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="love-letter page-shell">
+            <p class="eyebrow">FROM MY HEART TO YOURS</p>
+            <h2>Happy birthday, my love <span aria-hidden="true">♡</span></h2>
+            <p>Sakshi, I hope this year brings you the kind of happiness that stays, the kind of laughter that makes your cheeks hurt, and all the little moments that make life feel beautiful.</p>
+            <p>Thank you for being exactly who you are. You deserve to feel cherished today and every day—and I hope you never forget just how deeply loved and admired you are.</p>
+            <p>May every dream you carry find its way to you. I will always be here, loving you, believing in you, and reminding you how extraordinary you are.</p>
+            <p class="signature">Always yours, with love ♡</p>
+            <a class="promise-link" href="#promise">One last little promise <span aria-hidden="true">↓</span></a>
+        </section>
+
+        <p class="promise page-shell" id="promise">No matter how many birthdays go by, I will keep finding new reasons to fall for your beautiful heart.</p>
+    </main>
+
+    <footer class="page-shell">Made with love, just for you <span aria-hidden="true">♥</span></footer>
+    <audio id="love-letter-song" src="./Static/a-thousand-years.mp3" autoplay loop preload="auto"></audio>
+    <script>
+        const loveLetterSong = document.querySelector("#love-letter-song");
+
+        function startLoveLetterSong() {
+            if (!loveLetterSong.paused) return;
+
+            loveLetterSong.play().catch((error) => {
+                if (error.name !== "NotAllowedError") {
+                    console.error("Could not play the birthday love-letter song:", error);
+                    return;
+                }
+
+                const retryPlayback = () => {
+                    loveLetterSong.play().catch((retryError) => {
+                        if (retryError.name !== "NotAllowedError") {
+                            console.error("Could not play the birthday love-letter song:", retryError);
+                        }
+                    });
+                };
+
+                document.addEventListener("pointerdown", retryPlayback, { once: true });
+                document.addEventListener("keydown", retryPlayback, { once: true });
+            });
+        }
+
+        document.querySelectorAll('a[href]:not([href^="#"])').forEach((link) => {
+            link.addEventListener("click", () => loveLetterSong.pause());
+        });
+
+        loveLetterSong.addEventListener("error", () => {
+            console.error("The birthday love-letter song could not be loaded.");
+        });
+
+        window.addEventListener("pagehide", () => loveLetterSong.pause());
+        window.addEventListener("pageshow", startLoveLetterSong);
+        startLoveLetterSong();
+    </script>
+</body>
+</html>

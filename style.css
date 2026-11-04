@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+
+:root {
+    color-scheme: dark;
+    --ink: #fff2e8;
+    --muted: #d3b9c3;
+    --rose: #f0a3ae;
+    --gold: #f3d09a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 38px;
+    color: var(--ink);
+    background:
+        radial-gradient(ellipse at 10% 12%, rgba(128, 45, 80, 0.4), transparent 38%),
+        radial-gradient(ellipse at 90% 85%, rgba(101, 48, 96, 0.32), transparent 42%),
+        linear-gradient(135deg, #1a0712, #35101f 55%, #1d0a1a);
+    font-family: "DM Sans", sans-serif;
+}
+
+body::before,
+body::after {
+    position: fixed;
+    width: 440px;
+    height: 440px;
+    border: 1px solid rgba(243, 208, 154, 0.11);
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+}
+
+body::before { top: -300px; left: -190px; box-shadow: 0 0 0 24px rgba(243, 208, 154, 0.025), 0 0 0 48px rgba(243, 208, 154, 0.02); }
+body::after { right: -270px; bottom: -340px; width: 580px; height: 580px; box-shadow: 0 0 0 25px rgba(243, 208, 154, 0.025); }
+
+.ambient { display: none; }
+
+.welcome-card {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: clamp(36px, 7vw, 88px);
+    width: min(100%, 1120px);
+    padding: clamp(30px, 6vw, 74px);
+    border: 1px solid rgba(243, 208, 154, 0.25);
+    border-radius: 28px;
+    background: linear-gradient(135deg, rgba(87, 32, 54, 0.7), rgba(38, 15, 32, 0.88));
+    box-shadow: 0 35px 100px rgba(0, 0, 0, 0.43), inset 0 1px rgba(255, 255, 255, 0.08);
+    animation: card-arrive 900ms cubic-bezier(0.2, 0.75, 0.3, 1) both;
+}
+
+.welcome-copy { text-align: left; }
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.eyebrow span { color: var(--rose); padding: 0 7px; }
+
+.heart-mark {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    margin: 30px 0 20px;
+    border: 1px solid rgba(240, 163, 174, 0.45);
+    border-radius: 50%;
+    color: #ffd2d4;
+    background: rgba(209, 98, 126, 0.15);
+    box-shadow: 0 0 32px rgba(209, 98, 126, 0.2);
+    font-size: 2rem;
+    animation: heartbeat 2.4s ease-in-out infinite;
+}
+
+.for-you {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 0.98rem;
+    letter-spacing: 0.04em;
+}
+
+h1 {
+    margin: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(3rem, 6.7vw, 5.4rem);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+h1 span {
+    color: var(--rose);
+    font-size: 0.78em;
+    font-style: italic;
+}
+
+.greeting {
+    min-height: 3.4em;
+    max-width: 430px;
+    margin: 22px 0 28px;
+    color: #e4cbd3;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.8;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 56px;
+    padding: 0 28px;
+    border: 1px solid rgba(255, 227, 197, 0.45);
+    border-radius: 999px;
+    color: #321221;
+    background: linear-gradient(110deg, #f3d09a, #f5b5b2);
+    box-shadow: 0 12px 35px rgba(222, 141, 147, 0.23);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.cta-button:hover { transform: translateY(-3px); box-shadow: 0 17px 40px rgba(222, 141, 147, 0.35); }
+.cta-button:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+
+.little-note {
+    margin: 24px 0 0;
+    color: #c6a9b5;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+}
+
+.little-note span { color: var(--rose); }
+
+.hero-photo {
+    position: relative;
+    height: min(67vh, 570px);
+    min-height: 360px;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid rgba(243, 208, 154, 0.48);
+    border-radius: 220px 220px 22px 22px;
+    background: rgba(243, 208, 154, 0.1);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-photo figcaption {
+    position: absolute;
+    right: -22px;
+    bottom: 28px;
+    left: -22px;
+    width: fit-content;
+    max-width: calc(100% + 44px);
+    margin: auto;
+    padding: 13px 18px;
+    border: 1px solid rgba(243, 208, 154, 0.38);
+    border-radius: 999px;
+    color: #fff4e9;
+    background: rgba(38, 13, 27, 0.82);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    text-align: center;
+    backdrop-filter: blur(12px);
+}
+
+.hero-photo figcaption span { color: var(--rose); padding-right: 5px; }
+
+.sparkle {
+    position: fixed;
+    z-index: 0;
+    color: var(--gold);
+    pointer-events: none;
+    text-shadow: 0 0 14px rgba(243, 208, 154, 0.75);
+    animation: drift 6s ease-in-out forwards;
+}
+
+@keyframes card-arrive {
+    from { opacity: 0; transform: translateY(20px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    8% { transform: scale(1.08); }
+    16% { transform: scale(1); }
+}
+
+@keyframes drift {
+    0% { opacity: 0; transform: translateY(20px) rotate(0); }
+    15% { opacity: 0.85; }
+    100% { opacity: 0; transform: translateY(-85vh) rotate(35deg); }
+}
+
+@media (max-width: 760px) {
+    body { overflow-y: auto; padding: 20px; }
+    .welcome-card { grid-template-columns: 1fr; gap: 30px; padding: 30px 24px; }
+    .welcome-copy { text-align: center; }
+    .heart-mark { margin: 22px auto 16px; }
+    h1 { font-size: clamp(2.9rem, 13vw, 4.4rem); }
+    .greeting { margin: 18px auto 24px; }
+    .hero-photo { width: min(100%, 390px); height: 390px; min-height: 0; margin: 0 auto; border-radius: 190px 190px 20px 20px; }
+    .hero-photo figcaption { right: -10px; left: -10px; max-width: calc(100% + 20px); font-size: 0.83rem; }
+}
+
+@media (max-width: 420px) {
+    .eyebrow { font-size: 0.56rem; letter-spacing: 0.14em; }
+    .hero-photo { height: 330px; }
+    .cta-button { padding: 0 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
