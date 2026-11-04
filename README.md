@@ -29,7 +29,9 @@ The experience has three pages: a cinematic birthday welcome, a 12-photo gallery
 ---
 
 ## 🎉 How to Use
-Open `index.html` in a browser to start the experience. The image and animation files are stored alongside the pages.
+On Windows, run `start.bat` (or `py serve.py` from a terminal) to launch the site at a local HTTP address and open `index.html`. This serves the audio and images correctly; browsers may still require an initial tap before allowing sound. Press `Ctrl+C` in the terminal to stop the local server.
+
+The image, animation, and song files are stored in `Static/`.
 
 1. Clone the repo:  
    ```bash

@@ -1,13 +1,22 @@
+
+// ==========================================
+// 1. TYPING GREETING ANIMATION
+// ==========================================
+
 const greeting = document.querySelector(".greeting");
-const greetingText = "If I could choose one beautiful view to keep forever, it would always be you.";
+
+const greetingText =
+    "If I could choose one beautiful view to keep forever, it would always be you.";
 
 if (greeting) {
     let character = 0;
 
     function typeGreeting() {
         if (character >= greetingText.length) return;
+
         greeting.textContent += greetingText[character];
-        character += 1;
+        character++;
+
         window.setTimeout(typeGreeting, 36);
     }
 
@@ -18,71 +27,153 @@ if (greeting) {
     }
 }
 
+
+// ==========================================
+// 2. FLOATING SPARKLES
+// ==========================================
+
 const sparkleChoices = ["♡", "✦", "✧"];
 
 function createSparkle() {
     const sparkle = document.createElement("span");
+
     sparkle.className = "sparkle";
     sparkle.setAttribute("aria-hidden", "true");
-    sparkle.textContent = sparkleChoices[Math.floor(Math.random() * sparkleChoices.length)];
+
+    sparkle.textContent =
+        sparkleChoices[Math.floor(Math.random() * sparkleChoices.length)];
+
     sparkle.style.left = `${Math.random() * 100}vw`;
     sparkle.style.top = `${75 + Math.random() * 25}vh`;
-    sparkle.style.color = Math.random() > 0.5 ? "#f3d09a" : "#f0a3ae";
+
+    sparkle.style.color =
+        Math.random() > 0.5 ? "#f3d09a" : "#f0a3ae";
+
     sparkle.style.fontSize = `${14 + Math.random() * 14}px`;
+
     document.body.appendChild(sparkle);
-    sparkle.addEventListener("animationend", () => sparkle.remove(), { once: true });
+
+    sparkle.addEventListener(
+        "animationend",
+        () => sparkle.remove(),
+        { once: true }
+    );
 }
 
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     window.setInterval(createSparkle, 850);
 }
 
+
+// ==========================================
+// 3. BIRTHDAY SONG AUTOPLAY
+// ==========================================
+
 const birthdaySong = document.querySelector("#birthday-song");
+const autoplayHint = document.querySelector("#autoplay-hint");
 const nextPageLink = document.querySelector(".cta-button");
-let playbackFallbackInstalled = false;
 
-function removePlaybackFallback() {
-    if (!playbackFallbackInstalled) return;
-    document.removeEventListener("pointerdown", startBirthdaySong, true);
-    document.removeEventListener("touchend", startBirthdaySong, true);
-    document.removeEventListener("keydown", startBirthdaySong, true);
-    playbackFallbackInstalled = false;
-}
+if (birthdaySong) {
 
-function startBirthdaySong() {
-    if (!birthdaySong.paused) return;
+    // Try automatic playback
+    async function startBirthdaySong() {
 
-    birthdaySong.play().catch((error) => {
-        if (error.name === "NotAllowedError") {
-            if (playbackFallbackInstalled) return;
-            playbackFallbackInstalled = true;
-            document.addEventListener("pointerdown", startBirthdaySong, true);
-            document.addEventListener("touchend", startBirthdaySong, true);
-            document.addEventListener("keydown", startBirthdaySong, true);
-            return;
+        if (!birthdaySong.paused) return;
+
+        try {
+
+            await birthdaySong.play();
+
+            console.log("Raabta started playing!");
+
+            if (autoplayHint) {
+                autoplayHint.hidden = true;
+            }
+
+        } catch (error) {
+
+            if (error.name === "NotAllowedError") {
+
+                // Browser blocked autoplay
+                if (autoplayHint) {
+                    autoplayHint.hidden = false;
+                }
+
+                console.log(
+                    "Autoplay blocked. Waiting for user interaction."
+                );
+
+            } else {
+
+                console.error("Song playback error:", error);
+
+            }
+        }
+    }
+
+
+    // Try autoplay when page loads
+    window.addEventListener("load", startBirthdaySong);
+
+    // Try again when page becomes visible
+    document.addEventListener("visibilitychange", () => {
+
+        if (!document.hidden) {
+            startBirthdaySong();
         }
 
-        console.error("Could not play the birthday song:", error);
     });
+
+
+    // Start song on first user interaction if autoplay was blocked
+    function handleFirstInteraction() {
+
+        if (birthdaySong.paused) {
+            startBirthdaySong();
+        }
+
+        document.removeEventListener("pointerdown", handleFirstInteraction);
+        document.removeEventListener("keydown", handleFirstInteraction);
+    }
+
+    document.addEventListener("pointerdown", handleFirstInteraction);
+    document.addEventListener("keydown", handleFirstInteraction);
+
+
+    // Hide hint when song starts
+    birthdaySong.addEventListener("playing", () => {
+
+        if (autoplayHint) {
+            autoplayHint.hidden = true;
+        }
+
+    });
+
+
+    // Song loading error
+    birthdaySong.addEventListener("error", () => {
+
+        console.error("Raabta40.mp3 could not be loaded.");
+
+    });
+
+
+    // Pause song before navigating to next page
+    if (nextPageLink) {
+
+        nextPageLink.addEventListener("click", () => {
+            birthdaySong.pause();
+        });
+
+    }
+
+
+    // Pause when leaving the page
+    window.addEventListener("pagehide", () => {
+        birthdaySong.pause();
+    });
+
+
+    // Initial autoplay attempt
+    startBirthdaySong();
 }
-
-birthdaySong.addEventListener("playing", removePlaybackFallback);
-
-birthdaySong.addEventListener("error", () => {
-    console.error("The birthday song could not be loaded.");
-});
-
-nextPageLink.addEventListener("click", () => {
-    birthdaySong.pause();
-});
-
-window.addEventListener("pagehide", () => {
-    birthdaySong.pause();
-});
-
-window.addEventListener("pageshow", startBirthdaySong);
-document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) startBirthdaySong();
-});
-
-startBirthdaySong();
