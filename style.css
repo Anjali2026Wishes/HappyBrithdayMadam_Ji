@@ -1542,7 +1542,13 @@ h1 span {
     .photo-inner img {
 
         object-position:
-            center 10%;
+            center top;
+
+        transform:
+            scale(1.35);
+
+        transform-origin:
+            center top;
     }
 
 
