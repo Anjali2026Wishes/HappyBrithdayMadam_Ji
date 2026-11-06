@@ -33,6 +33,4 @@ On Windows, run `start.bat` (or `py serve.py` from a terminal) to launch the sit
 
 The image, video, animation, and song files are stored in `Static/`.
 
-1. Clone the repo:  
-   ```bash
-   git clone https://github.com/nikitayadav19/HappyBirthdayGF.git
+
