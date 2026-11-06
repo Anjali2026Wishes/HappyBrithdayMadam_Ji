@@ -1,63 +1,63 @@
 const loveNotes = [
     {
-        image: "img2.jpeg",
-        title: "The face I could never stop admiring",
-        text: "Those soft eyes, that lovely little smile—you are breathtaking up close, and somehow even more beautiful in all the quiet details."
+        image: "img1.png",
+        title: "Grace that feels like home",
+        text: "The warm lights, the green around you, and that beautiful saree make this photo glow—but your calm, lovely presence is what makes it unforgettable."
     },
     {
-        image: "img1.jpeg",
-        title: "You make every celebration glow",
-        text: "With all those pink balloons around you, I still notice you first. You bring your own kind of light to every special day."
+        image: "img2.jpeg",
+        title: "That playful little smile",
+        text: "Your bright eyes and that cheeky wink make me smile every time. I love how effortlessly you can turn an ordinary moment into my favorite one."
     },
     {
         image: "img3.jpeg",
-        title: "Effortlessly lovely",
-        text: "There is such a calm, graceful beauty in this moment. You never need to try too hard—being your beautiful self is more than enough."
+        title: "A heart full of sweetness",
+        text: "Even through a photo, your playful warmth shines through. You have a way of making my heart feel a little lighter and a lot more loved."
     },
     {
-        image: "img5.jpeg",
-        title: "Your softness is your magic",
-        text: "The gentle, thoughtful way you carry yourself is one of the things I treasure most. You make tenderness look beautiful."
+        image: "img4.png",
+        title: "My favorite kind of glow",
+        text: "The blue suits you beautifully, but it is your gentle smile that catches my eye. I could keep finding new reasons to admire you in every photo."
     },
     {
-        image: "img9.jpeg",
-        title: "A little closer to my heart",
-        text: "Your sweet expression and that soft pink look feel like a warm hug in a photo. I could keep this one close forever."
+        image: "img5.png",
+        title: "Pretty in every little detail",
+        text: "The flowers, the soft colors, and your graceful pose feel like a scene from a dream. You make elegance look completely effortless, Anjali."
     },
     {
-        image: "img8.jpeg",
-        title: "My sunshine, even on an ordinary day",
-        text: "Among all that lovely green, you look like the sunshine found its favorite person. Your gentle presence makes everything feel brighter."
+        image: "img6.png",
+        title: "The sparkle in the evening",
+        text: "The lights around you are lovely, but your confident, beautiful smile is the real sparkle. I adore this side of you."
     },
     {
-        image: "img6.jpeg",
-        title: "Beautiful in your own way",
-        text: "That blue suits your quiet confidence so perfectly. I love how every side of you—bold, gentle, playful, thoughtful—is still unmistakably you."
+        image: "img7.png",
+        title: "A little collage of my favorite you",
+        text: "Every frame has that sweet, familiar expression I adore. If I could keep a thousand little glimpses of you, I still would never have enough."
     },
     {
-        image: "img7.jpeg",
-        title: "I’m proud of your strong heart",
-        text: "This picture reminds me how much determination you have. I admire the strength behind your softness, and I’ll always be cheering for you."
+        image: "img8.png",
+        title: "A dream in pink",
+        text: "You look absolutely radiant in pink. The whole photo feels soft and magical, just like the happiness you bring into my life."
     },
     {
-        image: "img13.jpeg",
-        title: "You’re the sparkle in every season",
-        text: "All those festive lights are lovely, but you are still the brightest thing in the frame. You make even an ordinary evening feel special."
+        image: "img9.png",
+        title: "The smile I want to remember",
+        text: "With roses and warm lights all around, this close-up feels like a little love note on its own. Your smile is still the prettiest thing here."
     },
     {
-        image: "img4.jpeg",
-        title: "I’d follow you to the edge of the world",
-        text: "This mountain view is beautiful, but the feeling this photo gives me is even better: wherever the road leads, I’d be happiest sharing it with you."
+        image: "img5.png",
+        title: "Beautiful in every little detail",
+        text: "Your graceful smile and the soft pink flowers make this moment feel like a dream. I hope you see yourself through my eyes: wonderful in every way."
     },
     {
-        image: "img11.jpeg",
-        title: "A whole world of memories ahead",
-        text: "You, the mountains, and all that open sky—it makes me dream of every beautiful place and little adventure we still have ahead of us."
+        image: "img11.png",
+        title: "Every adventure is better with you",
+        text: "You and those beautiful mountains make me dream of all the places we could explore together. Wherever we go, being beside you is my favorite view."
     },
     {
-        image: "img12.jpeg",
-        title: "You make the whole world feel magical",
-        text: "In the snow and open sky, you look so peaceful and lovely. I hope life always gives you reasons to look up, laugh, and feel this happy."
+        image: "img12.png",
+        title: "My sunshine in every season",
+        text: "That bright saree and all the greenery make this picture feel full of joy. You bring that same warmth and color into my life every day."
     }
 ];
 

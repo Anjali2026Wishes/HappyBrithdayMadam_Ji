@@ -127,7 +127,7 @@ h1 em { color: var(--rose); font-weight: 500; }
 
 .reason-image-frame {
     position: relative;
-    aspect-ratio: 1.12 / 1;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     background: #482b39;
 }
@@ -137,7 +137,7 @@ h1 em { color: var(--rose); font-weight: 500; }
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 35%;
+    object-position: center top;
     transition: transform 650ms cubic-bezier(0.2, 0.7, 0.3, 1);
 }
 
@@ -222,7 +222,7 @@ h1 em { color: var(--rose); font-weight: 500; }
     .page-heading { margin: 52px auto 30px; }
     .gallery-heading { margin-bottom: 21px; }
     .reasons-grid { grid-template-columns: 1fr; gap: 15px; }
-    .reason-image-frame { aspect-ratio: 1.18 / 1; }
+    .reason-image-frame { aspect-ratio: 4 / 3; }
     .reason-copy, .featured-card .reason-copy { padding: 18px 19px 20px; }
     .reason-title, .featured-card .reason-title { font-size: 1.2rem; }
     .next-chapter { margin-top: 48px; }
