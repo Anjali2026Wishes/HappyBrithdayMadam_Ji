@@ -5,9 +5,9 @@ const loveNotes = [
         text: "The warm lights, the green around you, and that beautiful saree make this photo glow—but your calm, lovely presence is what makes it unforgettable."
     },
     {
-        image: "img2.jpeg",
-        title: "That playful little smile",
-        text: "Your bright eyes and that cheeky wink make me smile every time. I love how effortlessly you can turn an ordinary moment into my favorite one."
+        image: "img9.png",
+        title: "That smile I adore",
+        text: "Your soft smile, the pink roses, and those warm lights make this one of my favorite pictures of you. I could look at it a thousand times and still fall for you again."
     },
     {
         image: "img3.jpeg",
